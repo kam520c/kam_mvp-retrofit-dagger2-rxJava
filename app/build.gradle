@@ -21,12 +21,12 @@ android {
 }
 
 dependencies {
+    def projectDependencies = rootProject.ext.projectDependencies
     def modelDependencies = rootProject.ext.modelDependencies
     def toolDependencies = rootProject.ext.toolDependencies
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile projectDependencies.support
     compile modelDependencies.dagger
     apt modelDependencies.daggerCompiler
     compile modelDependencies.squareRetrofit

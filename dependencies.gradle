@@ -4,12 +4,17 @@ allprojects {
     }
 }
 ext{
+    supportVersion="24.2.0"
     //dagger version
     daggerVersion="2.7"
 //    retrofit version
     retrofitVersion="1.9.0"
     butterknifeVersion="6.1.0"
     okhttpVersion="2.3.0"
+
+    projectDependencies = [
+            support              : "com.android.support:appcompat-v7:${supportVersion}"
+    ]
 
     modelDependencies = [
             daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
