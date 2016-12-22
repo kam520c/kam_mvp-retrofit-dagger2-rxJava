@@ -8,10 +8,18 @@ ext{
     daggerVersion="2.7"
 //    retrofit version
     retrofitVersion="1.9.0"
+    butterknifeVersion="6.1.0"
+    okhttpVersion="2.3.0"
 
     modelDependencies = [
             daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger               : "com.google.dagger:dagger:${daggerVersion}",
-            squareRetrofit       : "com.squareup.retrofit:retrofit:${retrofitVersion}"
+            squareRetrofit       : "com.squareup.retrofit:retrofit:${retrofitVersion}",
+            okhttp               : "com.squareup.okhttp:okhttp:${okhttpVersion}"
+    ]
+
+    toolDependencies = [
+            butterknife          : "com.jakewharton:butterknife:${butterknifeVersion}"
+
     ]
 }
