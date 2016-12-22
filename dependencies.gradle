@@ -1,0 +1,17 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+ext{
+    //dagger version
+    daggerVersion="2.7"
+//    retrofit version
+    retrofitVersion="1.9.0"
+
+    modelDependencies = [
+            daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger               : "com.google.dagger:dagger:${daggerVersion}",
+            squareRetrofit       : "com.squareup.retrofit:retrofit:${retrofitVersion}"
+    ]
+}
