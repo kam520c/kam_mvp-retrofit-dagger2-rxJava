@@ -11,7 +11,7 @@ import com.kammvp.view.LoginView;
 
 import javax.inject.Inject;
 
-public final class LoginPresenterImpl implements LoginPresenter {
+public final class LoginPresenterImpl extends LoginPresenter {
     /**
      * The view
      */
@@ -53,16 +53,13 @@ public final class LoginPresenterImpl implements LoginPresenter {
 
     }
 
+    @Override
     public void loginUser(String name, String psd) {
-        if (name.equals(user.getUserName()) && psd.equals(user.getPassword())) {
+        Log.e("==name=", "click loginUser");
+        if (mInteractor.verifyUserName(name) && mInteractor.verifyPassword(psd)) {
             mView.loginSuccess();
         } else {
             mView.showErrorMsg();
         }
-    }
-    public void showText(){
-        Log.e("==name=",user.getUserName()+"");
-        Log.e("==psd=",user.getPassword()+"");
-        mView.showText();
     }
 }

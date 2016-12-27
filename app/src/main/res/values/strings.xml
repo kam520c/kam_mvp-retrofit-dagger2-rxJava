@@ -3,4 +3,5 @@
     <string name="btn_login_login">登陆</string>
     <string name="login_password_worng">用户名或密码不正确</string>
     <string name="login_success">登陆成功</string>
+    <string name="btn_login_sendCode">发送验证码</string>
 </resources>

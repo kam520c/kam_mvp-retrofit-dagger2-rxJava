@@ -18,19 +18,27 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding{
+        enabled true
+    }
 }
 
 dependencies {
     def projectDependencies = rootProject.ext.projectDependencies
     def modelDependencies = rootProject.ext.modelDependencies
     def toolDependencies = rootProject.ext.toolDependencies
+    def testDependencies = rootProject.ext.modelTestDependencies
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile projectDependencies.support
+
     compile modelDependencies.dagger
     apt modelDependencies.daggerCompiler
     compile modelDependencies.squareRetrofit
     compile modelDependencies.okhttp
 
     compile toolDependencies.butterknife
+
+    testCompile testDependencies.junit
+
 }

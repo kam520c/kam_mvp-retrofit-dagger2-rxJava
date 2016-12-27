@@ -6,5 +6,4 @@ import android.support.annotation.UiThread;
 public interface LoginView {
     void showErrorMsg();
     void loginSuccess();
-    void showText();
 }

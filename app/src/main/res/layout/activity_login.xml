@@ -1,26 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <EditText
-        android:id="@+id/ed_login_name"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content" />
+    <data>
 
-    <EditText
-        android:id="@+id/ed_login_password"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content" />
+        <variable
+            name="presenter"
+            type="com.kammvp.presenter.LoginPresenter" />
 
-    <Button
-        android:id="@+id/btn_login_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_login_login" />
+        <variable
+            name="userModel"
+            type="com.kammvp.model.User" />
 
-</LinearLayout>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/ed_login_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@={userModel.userName}" />
+
+        <EditText
+            android:id="@+id/ed_login_password"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@={userModel.password}" />
+
+        <Button
+            android:id="@+id/btn_login_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->presenter.loginUser(userModel.userName,userModel.password)}"
+            android:text="@string/btn_login_login" />
+
+        <Button
+            android:id="@+id/btn_login_sendCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_login_sendCode" />
+
+    </LinearLayout>
+</layout>
